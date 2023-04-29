@@ -23,7 +23,6 @@ console.log(`use symbol as key ${obj[starSymbol]}`);
 let biggy: bigint = 24n;
 console.log(`bigint stpe ${biggy}`);
 
-let array: Array<number> = [1, 2, 3, 4];
 let array2: number[] = [12, 13, 14, 15];
 console.log(`array type length ${array2.length}`)
 
@@ -33,4 +32,21 @@ touple = [1, 2];
 // touple = [5]; compile time error 
 // touple = [1, 2, 5]; compile time error
 // touple = ['name', 33]; compile time error
-console.log(`touple type with 2 key`)
+console.log(`touple type with 2 key`);
+
+// despite being a functional programing javascript suports classes 
+let regexp = new RegExp('ab+c');
+let array: Array<number> = [1, 2, 3, 4];
+let set: Set<number> = new Set([1, 2, 3]);
+
+class customeClass<T> {
+    private data: Array<T> = [];
+    push(item: T) {
+        this.data.push(item);
+    };
+    pop(): T | undefined {
+        return this.data.shift();
+    }
+} 
+
+let queue: customeClass<number> = new customeClass();
